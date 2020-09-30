@@ -2,7 +2,7 @@ package com.noman.multithreading;
 
 public class ThreadDemo {
 
-	public static void main(String [] args)
+	public static void main(String [] args) throws InterruptedException
 	{
 		System.out.println(Thread.currentThread().getName()+" started..");
 		
@@ -12,7 +12,9 @@ public class ThreadDemo {
 		
 		System.out.println("In "+Thread.currentThread().getName()+" Thread");
 		
-		Thread.yield();
+		//Thread.yield();
+		t.join();
+		
 		for(int i=0;i<10;i++)
 		{
 			System.out.println("main thread");
