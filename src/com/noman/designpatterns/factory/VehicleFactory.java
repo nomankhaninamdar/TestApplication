@@ -15,6 +15,12 @@ public class VehicleFactory {
 			vehicle = new Bike();
 			return vehicle;
 		}
+		
+		else if(vehicleType=="Auto")
+		{
+			vehicle = new Auto();
+			return vehicle;
+		}
 		return vehicle;
 	}
 }
