@@ -23,6 +23,7 @@ public final class MyImmutable {
 		return name;
 	}
 	
+	
 	public MyImmutable(int id, String name)
 	{
 		this.id=id;
@@ -32,12 +33,28 @@ public final class MyImmutable {
 		
 	}
 	
+	public MyImmutable modify(int id,String name)
+	{
+		if(this.id==id && this.name==name)
+		{
+			return this;
+		}
+		
+		else
+		{
+			return new MyImmutable(id, name);
+		}
+	}
+	
 	public static void main (String [] args)
 	{
 		
 		MyImmutable obj = new MyImmutable(1, "name");
 		
-	//	obj.id=2;  // obj can not be updated since it is immutable
+		MyImmutable obj2=obj.modify(2, "inamdar");
+		
+		System.out.println(obj==obj2);
+		
 	}
 	
 }
