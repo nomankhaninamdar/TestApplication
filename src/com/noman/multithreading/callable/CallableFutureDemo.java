@@ -12,9 +12,9 @@ public class CallableFutureDemo {
 
 		ExecutorService service = Executors.newFixedThreadPool(10);
 		
-		Future future=service.submit(new MyCallableTask());
+		Future <String> future  =service.submit(new MyCallableTask());
 		
-		String futureString=(String) future.get();
+		String futureString =future.get();
 		
 		System.out.println(futureString);
 	}
